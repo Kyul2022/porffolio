@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ulrich Kamdem : Ingénieur Logiciel, DevOps & Cloud</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#FAF7F2;--ink:#3B2A20;--muted:#6E655E;--line:#D8D0C7;--card:#FFFFFF;--accent:#7A4B2A;--accent-ink:#fff;--soft:#EDE6DD}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#26211D;--ink:#F1EBE4;--muted:#A79E95;--line:#443B34;--card:#2F2924;--accent:#C9986B;--accent-ink:#26211D;--soft:#3A322B}}
+:root[data-theme="dark"]{--bg:#26211D;--ink:#F1EBE4;--muted:#A79E95;--line:#443B34;--card:#2F2924;--accent:#C9986B;--accent-ink:#26211D;--soft:#3A322B}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*:before,*:after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 clamp(17px,.3vw + 15.5px,21px)/1.6 "Times New Roman",Times,serif}
+main{width:100%;max-width:1200px;margin:0 auto;padding:0 clamp(16px,4vw,48px) 80px;overflow-wrap:break-word}
+h1,h2,h3{font-family:"Times New Roman",Times,serif;line-height:1.1;margin:0}
+h1{font-size:clamp(2.2rem,6.5vw,5rem);font-weight:800;letter-spacing:-.02em}
+h2{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;margin:72px 0 24px}
+h3{font-size:1.2rem;font-weight:700}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.hero{padding:64px 0 8px}
+.role{color:var(--muted);margin:14px 0 0;max-width:60ch}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0}
+.badge{background:var(--soft);padding:5px 12px;border-radius:99px;font-size:.9rem;font-weight:500}
+.links{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-block;padding:10px 18px;border-radius:8px;border:1.5px solid var(--ink);color:var(--ink);text-decoration:none;font-weight:500}
+.btn.main{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+/* pipeline */
+.pipe{margin-top:44px;border:1.5px solid var(--ink);border-radius:14px;background:var(--card);padding:20px}
+.pipe-title{font-weight:500;color:var(--muted);margin:0 0 14px;font-size:.95rem}
+.stages{display:flex;gap:0;overflow-x:auto;padding-bottom:6px;list-style:none;margin:0}
+.stages li{flex:1 0 118px;position:relative}
+.stages button{all:unset;cursor:pointer;display:block;width:100%;padding:12px 10px;text-align:center;font:500 .95rem "Times New Roman",Times,serif;border-bottom:4px solid var(--line);color:var(--muted)}
+.stages button[aria-selected="true"]{border-color:var(--accent);color:var(--ink);background:var(--soft)}
+.detail{padding:16px 4px 2px;min-height:5.2em}
+.detail b{font-family:"Times New Roman",Times,serif;font-size:1.05rem}
+x-fr,x-en{display:inline}html[lang="en"] x-fr{display:none}html:not([lang="en"]) x-en{display:none}
+.langbtn{position:fixed;top:calc(env(safe-area-inset-top,0px) + 10px);right:12px;z-index:5;background:var(--card);color:var(--ink);border:1.5px solid var(--ink);border-radius:8px;padding:6px 14px;font:500 .95rem "Times New Roman",Times,serif;cursor:pointer}
+/* insights */
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:28px}
+.fact{border-left:4px solid var(--accent);padding:2px 0 2px 14px}
+.fact b{display:block;font:800 2rem "Times New Roman",Times,serif;line-height:1}
+.fact span{color:var(--muted);font-size:.92rem}
+.insights{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.insights div{border-top:1.5px solid var(--ink);padding-top:12px}
+.insights p{margin:6px 0 0;color:var(--muted)}
+.path{list-style:none;margin:8px 0 0;padding:0}
+.path li{padding:4px 0 4px 16px;border-left:3px solid var(--line);color:var(--muted)}
+.path li b{color:var(--ink)}
+/* experience */
+.job{display:grid;grid-template-columns:minmax(120px,170px) minmax(0,1fr);gap:6px 28px;padding:22px 0;border-top:1px solid var(--line)}
+.when{color:var(--muted);font-size:.92rem}
+.job p{margin:6px 0 0}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.tags span{font-size:.82rem;border:1px solid var(--line);padding:2px 9px;border-radius:6px;color:var(--muted)}
+@media(max-width:640px){.job{grid-template-columns:1fr}}
+/* projects */
+.projects{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr))}
+.proj{min-width:0}
+.proj{border:1.5px solid var(--ink);border-radius:14px;padding:24px;background:var(--card)}
+.proj ul{padding-left:18px;margin:12px 0}
+.proj li{margin:6px 0}
+code{font-size:.88em;background:var(--soft);padding:1px 6px;border-radius:4px}
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:0 40px}
+.skills div{padding:14px 0;border-top:1px solid var(--line)}
+.skills dt{font-weight:500}
+.skills dd{margin:2px 0 0;color:var(--muted)}
+footer{margin-top:72px;padding-top:24px;border-top:1.5px solid var(--ink)}
+</style>
+</head>
+<body>
+<button class="langbtn" id="lang" type="button" aria-label="Switch to English">English</button>
+<main>
+<section class="hero">
+  <h1>Ulrich Laress<br>Kamdem Yamen</h1>
+  <p class="role"><x-fr>Ingénieur logiciel devenu DevOps &amp; Cloud. Je construis la chaîne complète : de la conception d'API jusqu'au cluster Kubernetes sécurisé et supervisé.</x-fr><x-en>Software engineer turned DevOps &amp; Cloud engineer. I build the full chain: from building APIs to a secured, monitored Kubernetes cluster.</x-en></p>
+  <div class="badges">
+    <span class="badge">AWS Certified Solutions Architect</span>
+    <span class="badge">HashiCorp Terraform Associate</span>
+    <span class="badge"><x-fr>Lauréat national Huawei ICT Competition 2023 (Cloud)</x-fr><x-en>National winner, Huawei ICT Competition 2023 (Cloud)</x-en></span>
+  </div>
+  <div class="links">
+    <a class="btn main" href="https://wa.me/237690250121" target="_blank" rel="noopener"><x-fr>Me contacter</x-fr><x-en>Contact me</x-en></a>
+    <a class="btn" href="https://github.com/Kyul2022" target="_blank" rel="noopener">GitHub</a>
+    <a class="btn" href="https://www.linkedin.com/in/ulrich-laress-kamdem-yamen/" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+
+  <div class="pipe">
+    <p class="pipe-title"><x-fr>Ma chaîne de bout en bout : cliquez sur une étape</x-fr><x-en>My end-to-end chain: click a stage</x-en></p>
+    <ul class="stages" role="tablist" aria-label="Étapes de la chaîne">
+      <li><button role="tab" aria-selected="true" data-i="0">Code</button></li>
+      <li><button role="tab" aria-selected="false" data-i="1"><x-fr>Intégration</x-fr><x-en>Integration</x-en></button></li>
+      <li><button role="tab" aria-selected="false" data-i="2">Image</button></li>
+      <li><button role="tab" aria-selected="false" data-i="3"><x-fr>Déploiement</x-fr><x-en>Deployment</x-en></button></li>
+      <li><button role="tab" aria-selected="false" data-i="4"><x-fr>Sécurité</x-fr><x-en>Security</x-en></button></li>
+      <li><button role="tab" aria-selected="false" data-i="5"><x-fr>Observabilité</x-fr><x-en>Observability</x-en></button></li>
+    </ul>
+    <div class="detail" id="detail" aria-live="polite"></div>
+  </div>
+</section>
+
+<h2><x-fr>Mon parcours en bref</x-fr><x-en>At a glance</x-en></h2>
+<div class="facts">
+  <div class="fact"><b>5</b><span><x-fr>microservices déployés en production pilote</x-fr><x-en>microservices deployed in a production pilot</x-en></span></div>
+  <div class="fact"><b>4</b><span><x-fr>projets d'infrastructure publiés</x-fr><x-en>published infrastructure projects</x-en></span></div>
+  <div class="fact"><b>2</b><span><x-fr>certifications : AWS et Terraform</x-fr><x-en>certifications: AWS and Terraform</x-en></span></div>
+  <div class="fact"><b>5</b><span><x-fr>missions et postes en 2 ans</x-fr><x-en>assignments and positions in 2 years</x-en></span></div>
+</div>
+<div class="insights">
+  <div><h3><x-fr>Je couvre tout le cycle</x-fr><x-en>I cover the full lifecycle</x-en></h3>
+    <p><x-fr>Du développement au déploiement, en passant par le pipeline, le cluster, la sécurité et la supervision, je peux intervenir sur tous les aspects du cycle complet.</x-fr><x-en>From development to deployment, including the pipeline, cluster, security and monitoring, I can work on every aspect of the full lifecycle.</x-en></p></div>
+  <div><h3><x-fr>La sécurité vient dans le pipeline</x-fr><x-en>Security lives in the pipeline</x-en></h3>
+    <p><x-fr>SonarCloud, scan Trivy, checkout sans droit d'écriture, secrets hors du code, bastion et pare-feu : les contrôles sont automatisés à chaque push, pas ajoutés à la fin.</x-fr><x-en>SonarCloud, Trivy scans, checkout without write access, secrets kept out of the code, bastion and firewall: controls run automatically on every push, not added at the end.</x-en></p></div>
+  <div><h3><x-fr>Je change d'outil quand le besoin change</x-fr><x-en>I change tools when the need changes</x-en></h3>
+    <p><x-fr>Une architecture cloud-native ramenée à un monolithe pour tenir le budget, des manifestes bruts remplacés par Helm quand ils ne suffisaient plus : je choisis la solution adaptée au contexte.</x-fr><x-en>A cloud-native architecture brought back to a monolith to fit the budget, raw manifests replaced by Helm when they no longer sufficed: I pick the solution that fits the context.</x-en></p></div>
+</div>
+<h3 style="margin-top:32px"><x-fr>Comment mon déploiement a évolué</x-fr><x-en>How my deployment approach evolved</x-en></h3>
+<ul class="path">
+  <li><b>Docker Compose</b> <x-fr>: premiers services conteneurisés</x-fr><x-en>: first containerized services</x-en></li>
+  <li><b><x-fr>Manifestes Kubernetes sur k3s</x-fr><x-en>Kubernetes manifests on k3s</x-en></b> <x-fr>: orchestration, ressources et limites par service</x-fr><x-en>: orchestration, resources and limits per service</x-en></li>
+  <li><b><x-fr>Charts Helm</x-fr><x-en>Helm charts</x-en></b> <x-fr>: réutilisables et versionnés, pour des déploiements rapides ou des mises à jour ciblées</x-fr><x-en>: reusable and versioned, for quick deployment or localized updates</x-en></li>
+  <li><b><x-fr>GitOps avec ArgoCD</x-fr><x-en>GitOps with ArgoCD</x-en></b> <x-fr>: le dépôt Git devient la source de vérité du cluster</x-fr><x-en>: the Git repository becomes the cluster's source of truth</x-en></li>
+</ul>
+
+<h2><x-fr>Projets</x-fr><x-en>Projects</x-en></h2>
+<div class="projects">
+  <article class="proj">
+    <h3><x-fr>NordicCart : Infrastructure AWS résiliente pour e-commerce</x-fr><x-en>NordicCart: Resilient AWS infrastructure for e-commerce</x-en></h3>
+    <div class="tags"><span>AWS</span><span>Terraform</span><span><x-fr>Projet personnel</x-fr><x-en>Personal project</x-en></span></div>
+    <ul>
+      <li><x-fr>Architecture VPC multi-AZ hautement disponible (sous-réseaux public / privé / base de données), en modules Terraform organisés par cycle de vie : réseau, données, calcul.</x-fr><x-en>Highly available multi-AZ VPC architecture (public / private / database subnets), in Terraform modules organized by lifecycle: network, data, compute.</x-en></li>
+      <li><x-fr>Dimensionnement des sous-réseaux par VLSM selon les besoins réels (IP minimales de l'ALB, marge de scaling de l'ASG).</x-fr><x-en>Subnet sizing with VLSM based on real needs (minimum IPs for the ALB, scaling headroom for the ASG).</x-en></li>
+      <li><x-fr>Groupes de sécurité au moindre privilège ; instances applicatives en sous-réseau privé derrière un ALB public en HTTPS (ACM).</x-fr><x-en>Least-privilege security groups; application instances in private subnets behind a public HTTPS ALB (ACM).</x-en></li>
+      <li><x-fr>Aucun secret en dur : VPC Interface Endpoint vers Secrets Manager et rôle IAM d'instance. Accès via Session Manager, sans SSH exposé.</x-fr><x-en>No hardcoded secrets: VPC Interface Endpoint to Secrets Manager and an instance IAM role. Access through Session Manager, with no exposed SSH.</x-en></li>
+    </ul>
+    <a href="#"><x-fr>Voir le dépôt IaC</x-fr><x-en>View the IaC repository</x-en></a>
+  </article>
+  <article class="proj">
+    <h3><x-fr>k3s2on10 : API sur k3s, CI/CD Jenkins et GitOps</x-fr><x-en>k3s2on10: API on k3s, Jenkins CI/CD and GitOps</x-en></h3>
+    <div class="tags"><span>MySQL</span><span>Jenkins</span><span>Kaniko</span><span>k3s</span><span>ArgoCD</span></div>
+    <ul>
+      <li><x-fr>API REST CRUD conteneurisée avec un Dockerfile multi-étapes qui produit une image légère basée sur JRE.</x-fr><x-en>CRUD REST API containerized with a multi-stage Dockerfile that produces a lightweight JRE-based image.</x-en></li>
+      <li><x-fr>Pipeline Jenkins sur agents Kubernetes éphémères ; Kaniko construit et pousse les images sans daemon Docker.</x-fr><x-en>Jenkins pipeline on ephemeral Kubernetes agents; Kaniko builds and pushes images without a Docker daemon.</x-en></li>
+      <li><x-fr>Déploiement GitOps : un dépôt d'infrastructure dédié, synchronisé en continu par ArgoCD vers le cluster.</x-fr><x-en>GitOps deployment: a dedicated infrastructure repository, continuously synced by ArgoCD to the cluster.</x-en></li>
+      <li><x-fr>Stockage persistant MySQL (StorageClass personnalisée, PersistentVolume lié par affinité de nœud), ConfigMaps et Secrets.</x-fr><x-en>Persistent MySQL storage (custom StorageClass, PersistentVolume bound by node affinity), ConfigMaps and Secrets.</x-en></li>
+    </ul>
+    <a href="#"><x-fr>Dépôt backend</x-fr><x-en>Backend repository</x-en></a> · <a href="#"><x-fr>Dépôt infrastructure</x-fr><x-en>Infrastructure repository</x-en></a>
+  </article>
+  <article class="proj">
+    <h3><x-fr>helm-k3s2on10 : Dépôt de charts Helm pour une bibliothèque numérique</x-fr><x-en>helm-k3s2on10: Helm chart repository for a digital library</x-en></h3>
+    <div class="tags"><span>Helm</span><span>Kubernetes</span><span>MariaDB</span><span>k3s</span></div>
+    <ul>
+      <li><x-fr>Problème de départ : déployée avec des manifestes bruts, l'application demandait de copier et modifier les fichiers pour chaque environnement. Ça ne passait pas à l'échelle.</x-fr><x-en>Starting problem: deployed with raw manifests, the app meant copying and editing files for every environment. That did not scale.</x-en></li>
+      <li><x-fr>Backend et frontend empaquetés en charts Helm versionnés. Toute la configuration (image, variables, limites de ressources) vit dans un</x-fr><x-en>Backend and frontend packaged as versioned Helm charts. All configuration (image, variables, resource limits) lives in one</x-en> <code>values.yaml</code> <x-fr>par environnement.</x-fr><x-en>per environment.</x-en></li>
+      <li><x-fr>MariaDB ajoutée comme dépendance du chart backend, récupérée avec</x-fr><x-en>MariaDB added as a dependency of the backend chart, fetched with</x-en> <code>helm dependency update</code>.</li>
+      <li><x-fr>Archives</x-fr><x-en>Archives</x-en> <code>.tgz</code> <x-fr>et</x-fr><x-en>and</x-en> <code>index.yaml</code> <x-fr>publiés : le dépôt s'ajoute avec</x-fr><x-en>published: the repository is added with</x-en> <code>helm repo add</code> <x-fr>et les charts s'installent en une commande.</x-fr><x-en>and charts install with a single command.</x-en></li>
+    </ul>
+    <a href="https://github.com/Kyul2022/helm-k3s2on10"><x-fr>Voir le dépôt</x-fr><x-en>View the repository</x-en></a>
+  </article>
+  <article class="proj">
+    <h3><x-fr>secured-pipeline : Un pipeline CI/CD sécurisé à chaque étape</x-fr><x-en>secured-pipeline: a CI/CD pipeline secured at every stage</x-en></h3>
+    <div class="tags"><span>Java 17</span><span>GitHub Actions</span><span>SonarCloud</span><span>Trivy</span><span>Docker</span></div>
+    <ul>
+      <li><x-fr>À chaque push sur</x-fr><x-en>On every push to</x-en> <code>main</code> <x-fr>: checkout sans identifiants en écriture, tests Maven, analyse statique SonarCloud, build de l'image Docker.</x-fr><x-en>: checkout without write credentials, Maven tests, SonarCloud static analysis, Docker image build.</x-en></li>
+      <li><x-fr>Scan de vulnérabilités de l'image avec Trivy avant de la pousser sur Docker Hub.</x-fr><x-en>Image vulnerability scan with Trivy before pushing to Docker Hub.</x-en></li>
+      <li><x-fr>Déploiement automatique sur un VPS par SSH avec une clé dédiée ; tous les identifiants (Sonar, Docker Hub, SSH) sont stockés comme secrets GitHub Actions.</x-fr><x-en>Automatic deployment to a VPS over SSH with a dedicated key; all credentials (Sonar, Docker Hub, SSH) are stored as GitHub Actions secrets.</x-en></li>
+    </ul>
+    <a href="https://github.com/Kyul2022/secured-pipeline"><x-fr>Voir le dépôt</x-fr><x-en>View the repository</x-en></a>
+  </article>
+</div>
+
+<h2><x-fr>Expérience</x-fr><x-en>Experience</x-en></h2>
+<div>
+  <div class="job"><div class="when"><x-fr>Fév. 2025 - aujourd'hui</x-fr><x-en>Feb. 2025 - present</x-en></div><div>
+    <h3><x-fr>Ingénieur IT, Camtel</x-fr><x-en>IT Engineer, Camtel</x-en></h3>
+    <p><x-fr>Mise en œuvre de la solution de paiement électronique Blue Money : revues d'architecture et d'intégration avec le fournisseur, tests de recette (UAT) de l'application mobile, administration de la plateforme, planification des mises à niveau DNS du réseau national et documentation technique.</x-fr><x-en>Implementation of the Blue Money electronic payment solution: architecture and integration reviews with the vendor, user acceptance testing (UAT) of the mobile app, platform administration, planning of DNS upgrades across the national network, and technical documentation.</x-en></p>
+    <div class="tags"><span><x-fr>Paiement</x-fr><x-en>Payments</x-en></span><span>DNS</span><span>Linux</span><span>UAT</span></div></div></div>
+  <div class="job"><div class="when"><x-fr>Juil. - Nov. 2025</x-fr><x-en>Jul. - Nov. 2025</x-en></div><div>
+    <h3><x-fr>Ingénieur Backend &amp; DevOps (freelance), Natacha &amp; ICCSOFT</x-fr><x-en>Backend &amp; DevOps Engineer (freelance), Natacha &amp; ICCSOFT</x-en></h3>
+    <p><x-fr>Application de 5 microservices conçue, développée et déployée. CI/CD GitHub Actions, journalisation Grafana + Loki, SAST avec SonarCloud. Migration de Docker Compose vers k3s, tests de charge, requêtes et limites de ressources par service. Accès SSH et kubectl restreints à un bastion, protection DDoS et pare-feu.</x-fr><x-en>Application of 5 microservices designed, built and deployed. GitHub Actions CI/CD, Grafana + Loki logging, SAST with SonarCloud. Migration from Docker Compose to k3s, load tests, per-service resource requests and limits. SSH and kubectl access restricted to a bastion, DDoS protection and firewall.</x-en></p>
+    <div class="tags"><span>Spring Boot</span><span>RabbitMQ</span><span>k3s</span><span>Prometheus</span><span>Grafana</span></div></div></div>
+  <div class="job"><div class="when"><x-fr>Oct. 2024 - Fév. 2025</x-fr><x-en>Oct. 2024 - Feb. 2025</x-en></div><div>
+    <h3><x-fr>Ingénieur IT, Camtel</x-fr><x-en>IT Engineer, Camtel</x-en></h3>
+    <p><x-fr>Backend Spring Boot qui automatise le provisionnement de ressources cloud via les API Microstack (OpenStack).</x-fr><x-en>Spring Boot backend that automates cloud resource provisioning through the Microstack (OpenStack) APIs.</x-en></p>
+    <div class="tags"><span>Spring Boot</span><span>OpenStack</span><span>API REST</span></div></div></div>
+  <div class="job"><div class="when"><x-fr>Avr. - Août 2024</x-fr><x-en>Apr. - Aug. 2024</x-en></div><div>
+    <h3><x-fr>Ingénieur Logiciel &amp; Administrateur Cloud, Bibe Sarl</x-fr><x-en>Software Engineer &amp; Cloud Administrator, Bibe Sarl</x-en></h3>
+    <p><x-fr>Architecture cloud-native conçue puis ramenée à un monolithe Spring Boot pour respecter le budget. Composants React, gestion d'état Redux, intégration des API REST.</x-fr><x-en>Cloud-native architecture designed, then brought back to a Spring Boot monolith to respect the budget. React components, Redux state management, REST API integration.</x-en></p>
+    <div class="tags"><span>Spring Boot</span><span>React</span><span>Redux</span></div></div></div>
+  <div class="job"><div class="when"><x-fr>Nov. 2023 - Jan. 2024</x-fr><x-en>Nov. 2023 - Jan. 2024</x-en></div><div>
+    <h3><x-fr>Développeur Backend (freelance), client privé</x-fr><x-en>Backend Developer (freelance), private client</x-en></h3>
+    <p><x-fr>Architecture backend, API RESTful et tests d'interface Selenium simulant une vraie navigation.</x-fr><x-en>Backend architecture, RESTful APIs and Selenium UI tests simulating real user navigation.</x-en></p></div></div>
+</div>
+
+<h2><x-fr>Compétences</x-fr><x-en>Skills</x-en></h2>
+<dl class="skills">
+  <div><dt>Cloud &amp; IaC</dt><dd>AWS, Azure, Microstack (OpenStack), Terraform, Vault</dd></div>
+  <div><dt>CI/CD &amp; GitOps</dt><dd>GitHub Actions, Jenkins, ArgoCD</dd></div>
+  <div><dt><x-fr>Conteneurs &amp; orchestration</x-fr><x-en>Containers &amp; orchestration</x-en></dt><dd>Docker, Kubernetes, k3s, Helm</dd></div>
+  <div><dt><x-fr>Observabilité</x-fr><x-en>Observability</x-en></dt><dd>Prometheus, Grafana, Loki</dd></div>
+  <div><dt><x-fr>Sécurité &amp; qualité</x-fr><x-en>Security &amp; quality</x-en></dt><dd><x-fr>SonarQube, Trivy, bastion, pare-feu, protection DDoS</x-fr><x-en>SonarQube, Trivy, bastion, firewall, DDoS protection</x-en></dd></div>
+  <div><dt>Backend &amp; frontend</dt><dd>RabbitMQ, API REST, React, Redux</dd></div>
+  <div><dt><x-fr>Systèmes &amp; réseaux</x-fr><x-en>Systems &amp; networks</x-en></dt><dd><x-fr>Linux, administration système, DNS</x-fr><x-en>Linux, system administration, DNS</x-en></dd></div>
+</dl>
+
+<h2><x-fr>Formation</x-fr><x-en>Education</x-en></h2>
+<p><b><x-fr>Ingénieur Télécommunications, Sécurité des Réseaux et Systèmes</x-fr><x-en>Telecommunications Engineer, Network and Systems Security</x-en></b><br>SUP'PTIC, Yaoundé · 2020 - 2025</p>
+
+<footer>
+  <p><x-fr>Yaoundé, Cameroun ·</x-fr><x-en>Yaoundé, Cameroon ·</x-en> <a href="mailto:ulrichkamdem048@gmail.com">ulrichkamdem048@gmail.com</a> · +237 690 250 121</p>
+</footer>
+</main>
+<script>
+var S={fr:[
+["Code","API REST, architecture en microservices, messagerie RabbitMQ, tests d'interface Selenium."],
+["Intégration","Pipelines GitHub Actions et Jenkins de bout en bout, analyse statique SAST avec SonarCloud dans le pipeline de livraison."],
+["Image","Dockerfile multi-étapes, images légères basées sur JRE, construction sans daemon Docker grâce à Kaniko."],
+["Déploiement","Cluster k3s, GitOps avec ArgoCD, infrastructure as code avec Terraform, requêtes et limites de ressources définies après tests de charge."],
+["Sécurité","Accès SSH et kubectl via un bastion, protection DDoS au nœud d'entrée, ports fermés au pare-feu, secrets via Secrets Manager ou Kubernetes Secrets."],
+["Observabilité","Métriques Prometheus, tableaux de bord Grafana, journalisation centralisée avec Loki."]],
+en:[
+["Code","REST APIs, microservice architecture, RabbitMQ messaging, Selenium UI tests."],
+["Integration","End-to-end GitHub Actions and Jenkins pipelines, SonarCloud static analysis (SAST) built into the delivery pipeline."],
+["Image","Multi-stage Dockerfiles, lightweight JRE-based images, daemonless builds with Kaniko."],
+["Deployment","k3s cluster, GitOps with ArgoCD, infrastructure as code with Terraform, resource requests and limits set after load testing."],
+["Security","SSH and kubectl access through a bastion, DDoS protection at the entry node, unused ports closed at the firewall, secrets via Secrets Manager or Kubernetes Secrets."],
+["Observability","Prometheus metrics, Grafana dashboards, centralized logging with Loki."]]};
+var d=document.getElementById("detail"),b=document.querySelectorAll(".stages button"),lb=document.getElementById("lang"),cur=0,L="fr";
+function show(i){cur=i;b.forEach(function(x,k){x.setAttribute("aria-selected",k==i)});d.innerHTML="<b>"+S[L][i][0]+".</b> "+S[L][i][1]}
+function setLang(l){L=l;document.documentElement.lang=l;
+lb.textContent=l=="en"?"Français":"English";lb.setAttribute("aria-label",l=="en"?"Passer en français":"Switch to English");
+document.title=l=="en"?"Ulrich Kamdem: Software, DevOps & Cloud Engineer":"Ulrich Kamdem : Ingénieur Logiciel, DevOps & Cloud";
+show(cur);try{localStorage.setItem("lang",l)}catch(e){}}
+b.forEach(function(x){x.addEventListener("click",function(){show(+x.dataset.i)})});
+lb.addEventListener("click",function(){setLang(L=="en"?"fr":"en")});
+var init="fr";try{init=localStorage.getItem("lang")||((navigator.language||"").indexOf("en")==0?"en":"fr")}catch(e){}
+setLang(init);
+</script>
+</body>
+</html>
